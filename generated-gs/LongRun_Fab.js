@@ -186,8 +186,8 @@ function _longRunTrigger() {
   finally {
     // you must always call reset() to reset the long-running variables if there is no next trigger.
     if (longRun.isFinished()) {
-      longRun.reset();
       Logger.log(`LongRunTriggerFunction finished (${longRun.iterations} done)`);
+      longRun.reset();
       // *** call finalizer ***
       if (settings.finalizer.length) {
         settings.finalizer = this[settings.finalizer]; //hook code safely
